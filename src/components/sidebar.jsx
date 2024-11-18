@@ -62,10 +62,28 @@ function Sidebar() {
           {dropdowns.registration && (
             <ul className="dropdown-menu">
               <li>
-                <Link to="/registration/option1">Option One</Link>
+                <Link to="/patients/addpatient">add new patient</Link>
               </li>
               <li>
-                <Link to="/registration/option2">Option Two</Link>
+                <Link to="/patients/addappointment">add new appointment</Link>
+              </li>
+              <li>
+                <Link to="/doctor-nurses/add-doctor">Add new Doctor</Link>
+              </li>
+              <li>
+                <Link to="/doctor-nurses/add-nurse">Add new nurse</Link>
+              </li>
+              <li>
+                <Link to="/finances/invoices">Invoice</Link>
+              </li>
+              <li>
+                <Link to="/finances/discounts">Discount list</Link>
+              </li>
+              <li>
+                <Link to="/finances/fees">Fee list</Link>
+              </li>
+              <li>
+                <Link to="/finances/banks">Bank accounts</Link>
               </li>
             </ul>
           )}
@@ -82,7 +100,7 @@ function Sidebar() {
                 <Link to="/patients/addpatient">add new patient</Link>
               </li>
               <li>
-                <Link to="/patients/all-patients">all patients</Link>
+                <Link to="/patients">all patients</Link>
               </li>
               <li>
                 <Link to="/patients/addappointment">add new appointment</Link>
@@ -129,6 +147,23 @@ function Sidebar() {
           )}
         </li>
         <li>
+          <div onClick={() => toggleDropdown("departments")} className="dropdown-toggle">
+            <Link>
+             <span className="abc"> <FaHospital /> Departments</span> {dropdowns.departments ? <FaAngleUp className="dropicon" /> : <FaAngleDown className="dropicon" />}
+            </Link>
+          </div>
+          {dropdowns.departments && (
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/departments/list">Department List</Link>
+              </li>
+              <li>
+                <Link to="/departments/new-department">Add Department</Link>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li>
           <div onClick={() => toggleDropdown("labRadiology")} className="dropdown-toggle">
             <Link>
               <span className="abc"><FaMicroscope /> Lab & Radiology</span> {dropdowns.labRadiology ? <FaAngleUp className="dropicon" /> : <FaAngleDown className="dropicon" />}
@@ -150,23 +185,6 @@ function Sidebar() {
               </li>
               <li>
                 <Link to="/lab-radiology/reports">reports</Link>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li>
-          <div onClick={() => toggleDropdown("departments")} className="dropdown-toggle">
-            <Link>
-             <span className="abc"> <FaHospital /> Departments</span> {dropdowns.departments ? <FaAngleUp className="dropicon" /> : <FaAngleDown className="dropicon" />}
-            </Link>
-          </div>
-          {dropdowns.departments && (
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/departments/list">Department List</Link>
-              </li>
-              <li>
-                <Link to="/departments/new-department">Add Department</Link>
               </li>
             </ul>
           )}
@@ -246,9 +264,6 @@ function Sidebar() {
               <li>
                 <Link to="/facility-equipment-management/equipment">Equipment List</Link>
               </li>
-              <li>
-                <Link to="/facility-equipment-management/maintanence">Maintenance</Link>
-              </li>
             </ul>
           )}
         </li>
@@ -261,7 +276,7 @@ function Sidebar() {
           {dropdowns.users && (
             <ul className="dropdown-menu">
               <li>
-                <Link to="/users/users">User List</Link>
+                <Link to="/users">User List</Link>
               </li>
               <li>
                 <Link to="/users/new-user">Add User</Link>

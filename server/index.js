@@ -1,28 +1,37 @@
 const express = require("express");
 const pool = require("./db");
+const cors = require("cors"); 
+const usersRouter = require("./routes/usersRoute"); 
+const authRouter = require("./routes/authRoute"); 
+const patientRouter = require("./routes/patientRout"); 
+const bodyParser = require("body-parser");
+
 const app = express();
 const PORT = 3000;
 
-pool.getConnection((connection, err) => {
-  if (connection) {
+app.use(cors());
+app.use(bodyParser.json());
+
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error("Database connection failed:", err.message);
+  } else {
     console.log("Connected to the database!");
     connection.release();
-  } else {
-    console.error("Database connection failed:", err.message);
   }
 });
 
-app.get("/", async (req, res) => {
-    try {
-      // Query the users table
-      const [rows] = await pool.query("SELECT * FROM users");
-      res.json(rows); // Send the result as JSON
-    } catch (error) {
-      console.error("Error fetching users:", error.message);
-      res.status(500).send("An error occurred while fetching users.");
-    }
-  });
+// Routes
+app.use("/users", usersRouter); 
+app.use("/auth", authRouter); 
+app.use("/patients", patientRouter); 
 
+// Default route
+app.get("/", (req, res) => {
+  res.send("Welcome!");
+});
+
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

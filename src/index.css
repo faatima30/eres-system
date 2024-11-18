@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:sans-serif;
 }
 .app {
   display: flex;
@@ -49,6 +50,16 @@
   padding: 15px;
   align-items: center;
   justify-content: space-between; 
+}
+.logout-button{
+  background-color: (233, 233, 233);
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border: none;
+  width: 100%;
 }
 .sidebar li a:hover {
   background-color: #006105;
@@ -172,3 +183,172 @@
   padding: 20px;
   overflow-y: auto;
 }
+/* user pages  */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.gg{
+  margin-right: 20px;
+}
+.container {
+  max-width: 100%;
+  margin: 20px 1%;
+  padding: 20px;
+}
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: #5cb85c;
+}
+.btn {
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.abcd{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #c82333;
+}
+.btn-sm {
+  font-size: 14px;
+}
+/* DataTable */
+.react-data-table-component {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+}
+.react-data-table-component th {
+  background-color: #f1f1f1;
+  font-weight: 800;
+  color: #000000;
+}
+.react-data-table-component td {
+  padding: 10px;
+  color: #333;
+}
+.react-data-table-component tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.react-data-table-component tr:hover {
+  background-color: #f1f1f1;
+}
+.icons{
+  margin-right: 10px;
+}
+.icons2{
+  margin-right: 30px;
+}
+/* Modal Container */
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 500px;
+  padding: 20px;
+}
+.form-control,
+.form-select {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  width: 300px;
+}
+.modal-content.hello.form-control:focus,
+.modal-content.hello.form-select:focus {
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.hello{
+  justify-content: space-between;
+}
+
+/* Buttons */
+.btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+.btn-secondary {
+  border-color: #6c757d;
+  border: none;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
